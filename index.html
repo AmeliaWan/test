@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Energy Waste in Meeting Room</title>
+  <script src="https://cdn.plot.ly/plotly-2.27.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+  
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+  <h2>The waste of the energy in the meeting room</h2>
+
+  <p>The project studies the energy efficiency of office buildings by measuring their indoor environmental quality (IEQ). 
+    The data records indoor temperature, outdoor temperature, energy waste, money waste, heating waste and cooling waste for one year.</p>
+  <p>The <span style="color: green; font-weight: bold;">green line</span> represents the lowest suitable temperature, and the 
+    <span style="color: red; font-weight: bold;">red line</span> represents the highest suitable temperature.</p>
+
+  <div class="control-bar">
+    <label for="wasteType">View:</label>
+    <select id="wasteType">
+      <option value="temp">Temperature</option>
+      <option value="energy_daily">Energy Waste</option>
+      <option value="money_daily">Money Waste</option>
+      <option value="heating_waste">Heating Waste</option>
+      <option value="cooling_waste">Cooling Waste</option>
+    </select>
+  </div>
+
+  <div class="container">
+    <div id="chart"></div>
+
+    <div class="slider-row" id="daySliderRow">
+      <label id="dayLabel">Select Day:</label>
+      <input type="range" id="daySlider" min="1" max="31" value="1">
+      <span id="dayValue">1</span>
+    </div>
+
+    <div class="slider-row" id="monthSliderRow">
+      <label for="monthSlider">Month:</label>
+      <input type="range" id="monthSlider" min="1" max="12" value="1">
+      <span id="monthValue">1</span>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
